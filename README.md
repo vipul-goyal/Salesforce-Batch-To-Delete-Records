@@ -11,19 +11,21 @@ The features provided in this library are:
 
 # Classes and Functions
 1)BatchUtil:This class is the heart of the library.This class contains the following methods:
-	>setBatchSize(Integer) :This method can be used to set the batch size [Default batch size is 200].
-	>setObject(String) : This method can be used to set the object for record deletion.
-	>setCondition(String) : This method is used to add conditions if any.
-	>runAtSystemLevel(Boolean) : This method can be used to run deletion at system level [By default it is true].
-	>runAtUserLevel(Boolean) : This method can be used to run deletion at user level [By default it is false].
-	>setWithSharing(Boolean) : This method can be used to set deletion mode as with sharing.Only the records which are shared with user will be deleted [By default it is true].
-	>setWithoutSharing(Boolean) : This method can be used to set deletion mode as without sharing.All the records which are present in the org will be deleted [By default it is false].
-	>setLimit(Integer) : This is to limit the records that are being deleted.
-	>setAllOrNone(Boolean) : This method can be used to set whether you want a partial deletion of records in every batch or not(in case of an error) [By default it is false].
+	>setBatchSize(Integer) :This method can be used to set the batch size [Default batch size is 200].\n
+	>setObject(String) : This method can be used to set the object for record deletion.\n
+	>setCondition(String) : This method is used to add conditions if any.\n
+	>runAtSystemLevel(Boolean) : This method can be used to run deletion at system level [By default it is true].\n
+	>runAtUserLevel(Boolean) : This method can be used to run deletion at user level [By default it is false].\n
+	>setWithSharing(Boolean) : This method can be used to set deletion mode as with sharing.Only the records which are shared with user will be deleted [By default it is true].\n
+	>setWithoutSharing(Boolean) : This method can be used to set deletion mode as without sharing.All the records which are present in the org will be deleted [By default it is false].\n
+	>setLimit(Integer) : This is to limit the records that are being deleted.\n
+	>setAllOrNone(Boolean) : This method can be used to set whether you want a partial deletion of records in every batch or not(in case of an error) [By default it is false].\n
 	>executeBatch() : This function is used to execute the batch for record deletion.
-	>checkPermissions() : This is an internal method used to check the permissions in case the batch is to be executed in user mode.
-2)RecordDeletionWithoutSharing: This is the batch class to delete records in without sharing mode.
-3)RecordDeletionWithSharing: This is the batch class to delete records in with sharing mode.
+	>checkPermissions() : This is an internal method used to check the permissions in case the batch is to be executed in user mode.\n
+	
+2)RecordDeletionWithoutSharing: This is the batch class to delete records in without sharing mode.\n
+
+3)RecordDeletionWithSharing: This is the batch class to delete records in with sharing mode.\n
 
 # Example
 	BatchUtil bat=new BatchUtil();
