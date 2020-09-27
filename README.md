@@ -9,7 +9,7 @@ The features provided in this library are:
 4)You can delete the records in both user and system mode. In user mode the object accessibility and CRUD permissions of the running user are checked. In system mode CRUD permissions are bypassed.
 5)You also have the right to set the mode of record deletion i.e.with sharing or without sharing.
 
-Classes and Functions
+# Classes and Functions
 1)BatchUtil:This class is the heart of the library.This class contains the following methods:
 	>setBatchSize(Integer) :This method can be used to set the batch size [Default batch size is 200].
 	>setObject(String) : This method can be used to set the object for record deletion.
@@ -25,7 +25,7 @@ Classes and Functions
 2)RecordDeletionWithoutSharing: This is the batch class to delete records in without sharing mode.
 3)RecordDeletionWithSharing: This is the batch class to delete records in with sharing mode.
 
-Example
+# Example
 	BatchUtil bat=new BatchUtil();
 	bat.setObject('Contact');
 	bat.setcondition('where lastname like \'%con%\'');
