@@ -1,15 +1,15 @@
 public class BatchUtil {
     public class BatchUtilException extends Exception {}
     
-    public Integer batchSize=200;
-    public Integer recordLimit;
-   	public String objectName;
-    public String condition;
-    public Boolean systemLevel=true;
-    public Boolean userLevel=false;
-    public Boolean withSharing=true;
-    public Boolean withoutSharing=false;
-    public Boolean allOrNone=false;
+    private Integer batchSize=200;
+    private Integer recordLimit;
+   	private String objectName;
+    private String condition;
+    private Boolean systemLevel=true;
+    private Boolean userLevel=false;
+    private Boolean withSharing=true;
+    private Boolean withoutSharing=false;
+    private Boolean allOrNone=false;
     
     public void setBatchSize(Integer batchSize)
     {
