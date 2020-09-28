@@ -3,6 +3,7 @@
 This library facilitates you to delete multiple records of any object through batches.
 
 The features provided in this library are:
+
 1)You can add conditions for record deletion
 
 2)You are allowed to set the number of records that have to be deleted.
