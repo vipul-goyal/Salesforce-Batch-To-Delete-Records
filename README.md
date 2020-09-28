@@ -4,9 +4,13 @@ This library facilitates you to delete multiple records of any object through ba
 
 The features provided in this library are:
 1)You can add conditions for record deletion
+
 2)You are allowed to set the number of records that have to be deleted.
+
 3)You can set the batch size as per your convenience depending on the other processes that are triggered during record deletion.
+
 4)You can delete the records in both user and system mode. In user mode the object accessibility and CRUD permissions of the running user are checked. In system mode CRUD permissions are bypassed.
+
 5)You also have the right to set the mode of record deletion i.e.with sharing or without sharing.
 
 # Classes and Functions
