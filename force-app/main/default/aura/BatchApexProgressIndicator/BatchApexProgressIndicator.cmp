@@ -1,0 +1,18 @@
+<aura:component implements="force:lightningQuickAction" controller="BatchApexProgressIndicatorController">
+	<aura:attribute name="progress" type="Integer" default="0"/>
+    <aura:attribute name="apexJob" type="AsyncApexJob"/>
+
+        <div class="slds-align_absolute-center" style="height:5rem">
+            <lightning:button variant="brand" label="Execute Batch" title="Execute Batch" onclick="{!c.executeBatch}" />
+        </div>
+
+        <aura:if isTrue="{!v.apexJob != null}">
+            <aura:if isTrue="{!v.apexJob.JobItemsProcessed != v.apexJob.TotalJobItems}">
+                Processing {!v.apexJob.JobItemsProcessed} of {!v.apexJob.TotalJobItems}
+            </aura:if>
+            <aura:if isTrue="{!v.apexJob.Status == 'Completed'}">
+                Completed with {!v.apexJob.NumberOfErrors} errors.
+            </aura:if>
+            <lightning:progressBar value="{!v.progress}" size="large" variant="circular"/>
+        </aura:if>     
+</aura:component>
