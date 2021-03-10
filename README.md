@@ -6,42 +6,42 @@ This library not only provides you the functionality at the back end but it also
 
 The features provided in this library are:
 
-1)You can add conditions for record deletion
+1) You can add conditions for record deletion
 
-2)You are allowed to set the number of records that have to be deleted.
+2) You are allowed to set the number of records that have to be deleted.
 
-3)You can set the batch size as per your convenience depending on the other processes that are triggered during record deletion.
+3) You can set the batch size as per your convenience depending on the other processes that are triggered during record deletion.
 
-4)You can delete the records in both user and system mode. In user mode the object accessibility and CRUD permissions of the running user are checked. In system mode CRUD permissions are bypassed.
+4) You can delete the records in both user and system mode. In user mode the object accessibility and CRUD permissions of the running user are checked. In system mode CRUD permissions are bypassed.
 
-5)You also have the right to set the mode of record deletion i.e.with sharing or without sharing.
+5) You also have the right to set the mode of record deletion i.e.with sharing or without sharing.
 
 # Classes and Functions
 1)BatchUtil:This class is the heart of the library.This class contains the following methods:
 
-	>setBatchSize(Integer) :This method can be used to set the batch size [Default batch size is 200].
+	>setBatchSize(Integer): This method can be used to set the batch size [Default batch size is 200].
 	
-	>setObject(String) : This method can be used to set the object for record deletion.
+	>setObject(String): This method can be used to set the object for record deletion.
 	
-	>setCondition(String) : This method is used to add conditions if any.
+	>setCondition(String): This method is used to add conditions if any.
 	
-	>runAtSystemLevel(Boolean) : This method can be used to run deletion at system level [By default it is true].
+	>runAtSystemLevel(Boolean): This method can be used to run deletion at system level [By default it is true].
 	
-	>runAtUserLevel(Boolean) : This method can be used to run deletion at user level [By default it is false].
+	>runAtUserLevel(Boolean): This method can be used to run deletion at user level [By default it is false].
 	
-	>setWithSharing(Boolean) : This method can be used to set deletion mode as with sharing.Only the records which are shared with user will be deleted [By default it is true].
+	>setWithSharing(Boolean): This method can be used to set deletion mode as with sharing.Only the records which are shared with user will be deleted [By default it is true].
 	
-	>setWithoutSharing(Boolean) : This method can be used to set deletion mode as without sharing.All the records which are present in the org will be deleted [By default it is false].
+	>setWithoutSharing(Boolean): This method can be used to set deletion mode as without sharing.All the records which are present in the org will be deleted [By default it is false].
 	
-	>setLimit(Integer) : This is to limit the records that are being deleted.
+	>setLimit(Integer): This is to limit the records that are being deleted.
 	
-	>setAllOrNone(Boolean) : This method can be used to set whether you want a partial deletion of records in every batch or not(in case of an error) [By default it is false].
+	>setAllOrNone(Boolean): This method can be used to set whether you want a partial deletion of records in every batch or not(in case of an error) [By default it is false].
 	
-	>executeBatch() : This function is used to execute the batch for record deletion.
+	>executeBatch(): This function is used to execute the batch for record deletion.
 	
-	>checkPermissions() : This is an internal method used to check the permissions in case the batch is to be executed in user mode.
+	>checkPermissions(): This is an internal method used to check the permissions in case the batch is to be executed in user mode.
 
-	>emailService()  :This function is invoked after the records have been deleted to send an to the user,notifying him about the completion of the record deletion.
+	>emailService(): This function is invoked after the records have been deleted to send an to the user,notifying him about the completion of the record deletion.
 	
 2)RecordDeletionWithoutSharing: This is the batch class to delete records in without sharing mode.
 
@@ -55,6 +55,9 @@ The features provided in this library are:
 	bat.runAtUserLevel(true);
 	bat.executeBatch();
 
-#Please raise any concerns or issue that you may face during the use of the functionalities.
+# Please raise any concerns or issue that you may face during the use of the functionalities.
 
-#Developer : Vipul Goyal (Email: vipul.gyl12@gmail.com)
+#Developer: Vipul Goyal (Email: vipul.gyl12@gmail.com)
+
+
+You can join the team on slack: https://join.slack.com/t/salesforceenh-nm69822/shared_invite/zt-jpa6lj6s-X41PJMX6RBGMoa~QJiIQWA
