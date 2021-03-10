@@ -2,6 +2,8 @@
 
 This library facilitates you to delete multiple records of any object through batches.
 
+This library not only provides you the functionality at the back end but it also gives you a user friendly tab to initiate the process.
+
 The features provided in this library are:
 
 1)You can add conditions for record deletion
@@ -38,6 +40,8 @@ The features provided in this library are:
 	>executeBatch() : This function is used to execute the batch for record deletion.
 	
 	>checkPermissions() : This is an internal method used to check the permissions in case the batch is to be executed in user mode.
+
+	>emailService()  :This function is invoked after the records have been deleted to send an to the user,notifying him about the completion of the record deletion.
 	
 2)RecordDeletionWithoutSharing: This is the batch class to delete records in without sharing mode.
 

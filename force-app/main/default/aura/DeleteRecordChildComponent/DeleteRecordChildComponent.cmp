@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name='inputName' type="String"/>
+    <aura:attribute name='inputLabel' type="String"/>
+    <aura:attribute name='inputType' type="String"/>
+    <aura:attribute name='inputValue' type="Object"/>    
+    <div class='slds-col slds-size_4-of-12'/>
+    <aura:if isTrue="{!v.inputType!='toggle'}">
+        <div class='slds-col slds-size_4-of-12'>
+            <br/>
+            <lightning:input name='{!v.inputName}' label='{!v.inputLabel}' type='{!v.inputType}' value='{!v.inputValue}'/>
+        </div>
+        <aura:set attribute='else'>
+            <div class='slds-col slds-size_4-of-12'>
+                <br/>
+                <lightning:input name='{!v.inputName}' label='{!v.inputLabel}' type='{!v.inputType}' checked='{!v.inputValue}' variant='label-inline'/>
+            </div>
+        </aura:set>
+    </aura:if>
+    <div class='slds-col slds-size_4-of-12'/>
+        
+</aura:component>

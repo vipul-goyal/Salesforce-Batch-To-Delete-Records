@@ -16,6 +16,6 @@ public with sharing class RecordDeletionWithSharing implements Database.Batchabl
     }
     public void finish(Database.BatchableContext bc)
     {
-        
+        BatchUtil.emailService();
     }
 }

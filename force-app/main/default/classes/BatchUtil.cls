@@ -106,6 +106,16 @@ public class BatchUtil {
             return false;
     }
     
-    
+    public static void emailService()
+    {
+        String emailId=UserInfo.getUserEmail();
+        Messaging.SingleEmailMessage mail=new Messaging.SingleEmailMessage();
+        mail.setToAddresses(new List<String>{emailId});
+        mail.setSubject('Deletion of records completed');
+        String body='<html><body><p><b>Hi '+UserInfo.getName()+'</b>,<br/><br/>The record deletion is Completed.<br/><br/>Thanks,<br/>System Admin(Salesforce)</p></body></html>';
+        mail.setHtmlBody(body);
+        if(!Test.isRunningTest())
+            Messaging.sendEmail(new List<Messaging.Email>{mail});
+    }
 
 }

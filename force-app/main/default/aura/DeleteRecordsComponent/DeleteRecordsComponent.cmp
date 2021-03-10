@@ -1,0 +1,20 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller='DeleteRecordsController'>
+    <aura:attribute name='userSelections' type="Object"/>
+    <aura:handler name='init' value='{!this}' action='{!c.doInit}'/>
+    <div class="slds-grid slds-wrap">
+        <c:DeleteRecordChildComponent inputName='Object Name' inputLabel='Object Name' inputType='text' inputValue='{!v.userSelections.objectName}'/>
+        <c:DeleteRecordChildComponent inputName='Query Condition' inputLabel='Query Condition' inputType='text' inputValue='{!v.userSelections.condition}'/>
+        <c:DeleteRecordChildComponent inputName='Records to be deleted?(Empty out the field if you want to delete all records)' inputLabel='Records to be deleted?(Empty out the field if you want to delete all records)' inputType='number' inputValue='{!v.userSelections.recordLimit}'/>
+        <c:DeleteRecordChildComponent inputName='Batch Size' inputLabel='Batch Size(Max. 2000)' inputType='number' inputValue='{!v.userSelections.batchSize}'/>
+        <c:DeleteRecordChildComponent inputName='Run at System Level' inputLabel='Run at System Level' inputType='toggle' inputValue='{!v.userSelections.systemLevel}'/>
+        <c:DeleteRecordChildComponent inputName="Delete records(Not shared with you)" inputLabel='Delete records(Not shared with you)' inputType='toggle' inputValue='{!v.userSelections.deleteUnshared}'/>
+        <c:DeleteRecordChildComponent inputName='Partial Delete(In case of Error)' inputLabel='Partial Delete(In case of Error)' inputType='toggle' inputValue='{!v.userSelections.partialDelete}'/>
+        <div class='slds-col slds-size_12-of-12 slds-align_absolute-center'>
+            <br/>
+            <br/>
+            <lightning:button label='Delete Records' onclick='{!c.submit}' variant='brand'/>
+            &nbsp;
+            <lightning:button label='Reset' onclick='{!c.doInit}'/>
+        </div>
+    </div>
+</aura:component>

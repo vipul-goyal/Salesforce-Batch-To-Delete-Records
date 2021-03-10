@@ -16,6 +16,6 @@ public without sharing class RecordDeletionWithoutSharing implements Database.Ba
     }
     public void finish(Database.BatchableContext bc)
     {
-        
+        BatchUtil.emailService();
     }
 }
