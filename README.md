@@ -54,6 +54,11 @@ The features provided in this library are:
 	bat.setBatchSize(10);
 	bat.runAtUserLevel(true);
 	bat.executeBatch();
+	
+# Reference Image
+
+![image](https://user-images.githubusercontent.com/28615932/110556465-8f8c9580-8164-11eb-90b9-3b6e0e336660.png)
+
 
 # Please raise any concerns or issue that you may face during the use of the functionalities.
 
