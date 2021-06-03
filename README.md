@@ -62,7 +62,7 @@ The features provided in this library are:
 
 # Please raise any concerns or issue that you may face during the use of the functionalities.
 
-#Developer: Vipul Goyal (Email: vipul.gyl12@gmail.com)
+#Developer: Vipul Goyal (Email: me@vipulgoyal.dev)
 
 
 You can join the team on slack: https://join.slack.com/t/salesforceenh-nm69822/shared_invite/zt-jpa6lj6s-X41PJMX6RBGMoa~QJiIQWA
