@@ -31,11 +31,10 @@
             this.showToast('Error','Batch size should be between 1 and 2000','error');
             return;
         }
-        console.log('Here 1 '+JSON.stringify(component.get('v.userSelections')));
+        if(userSelections.recordLimit==null || userSelections.recordLimit=='')
+            userSelections.recordLimit=0;
         var action=component.get('c.executeDeletion');
-        console.log('Here 2'+JSON.stringify(component.get('v.userSelections')));
         action.setParam('userInput',JSON.stringify(component.get('v.userSelections')));
-        console.log('Here '+JSON.stringify(userSelections));
         action.setCallback(this,function(response){
             if(response.getState()=="SUCCESS")
             {
