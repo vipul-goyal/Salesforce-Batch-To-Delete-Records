@@ -31,6 +31,8 @@ public class DeleteRecordsController {
             bat.runAtSystemLevel(dataWrapper.systemLevel);
             bat.setAllOrNone(!dataWrapper.partialDelete);
             bat.setWithSharing(!dataWrapper.deleteUnshared);
+            if(dataWrapper.recordLimit>0)
+                bat.setLimit(dataWrapper.recordLimit);
             bat.executeBatch();
             return 'SUCCESS';
         }catch(Exception e)
