@@ -17,14 +17,7 @@ public class BatchUtilTest {
     {
         System.assertEquals(20,[Select id from contact].size());
         Test.startTest();
-        BatchUtil bat=new BatchUtil();
-        bat.setObject('Contact');
-        bat.setcondition('where lastname like \'Contact%\'');
-        bat.setBatchSize(10);
-        bat.setLimit(20);
-        bat.runAtUserLevel(true);
-        bat.setWithSharing(true);
-        bat.setAllOrNone(false);
+        BatchUtil bat=assignValues('Contact','where lastname like \'Contact%\'',10,20,true,true,false);
         bat.executeBatch();
         Test.stopTest();
         System.assertEquals(10,[Select id from contact].size());
@@ -35,16 +28,24 @@ public class BatchUtilTest {
     {
         System.assertEquals(20,[Select id from contact].size());
         Test.startTest();
-        BatchUtil bat=new BatchUtil();
-        bat.setObject('Contact');
-        bat.setcondition('where lastname like \'Contact%\'');
-        bat.setBatchSize(10);
-        bat.setLimit(20);
-        bat.runAtSystemLevel(true);
-        bat.setWithoutSharing(true);
-        bat.setAllOrNone(false);
+        BatchUtil bat=assignValues('Contact','where lastname like \'Contact%\'',10,20,true,false,false);
         bat.executeBatch();
         Test.stopTest();
         System.assertEquals(10,[Select id from contact].size());
+    }
+
+    public static BatchUtil assignValues(String obj,String condition,Integer batchSize,Integer lim,Boolean runLeveL,Boolean sharing,Boolean deletionMode)
+    {
+        BatchUtil bat=new BatchUtil();
+        bat.setObject(obj);
+        bat.setcondition(condition);
+        bat.setBatchSize(batchSize);
+        bat.setLimit(lim);
+        bat.runAtSystemLevel(runLeveL);
+        bat.runAtUserLevel(!runLevel);
+        bat.setWithoutSharing(!sharing);
+        bat.setWithSharing(sharing);
+        bat.setAllOrNone(deletionMode);
+        return bat;
     }
 }
