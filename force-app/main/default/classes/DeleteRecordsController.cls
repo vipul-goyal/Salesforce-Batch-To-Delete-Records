@@ -23,21 +23,27 @@ public class DeleteRecordsController {
     {
         try
         {
-            DataWrapper dataWrapper=(DataWrapper)JSON.deserialize(userInput,DataWrapper.class);
-            BatchUtil bat=new BatchUtil();
-            bat.setObject(dataWrapper.objectName);
-            bat.setcondition(dataWrapper.condition);
-            bat.setBatchSize(dataWrapper.batchSize);
-            bat.runAtSystemLevel(dataWrapper.systemLevel);
-            bat.setAllOrNone(!dataWrapper.partialDelete);
-            bat.setWithSharing(!dataWrapper.deleteUnshared);
-            if(dataWrapper.recordLimit>0)
-                bat.setLimit(dataWrapper.recordLimit);
+            BatchUtil bat=setBatchData(userInput);
             bat.executeBatch();
             return 'SUCCESS';
         }catch(Exception e)
         {
             return e.getMessage();
         }
+    }
+
+    public static BatchUtil setBatchData(String userInput)
+    {
+        DataWrapper dataWrapper=(DataWrapper)JSON.deserialize(userInput,DataWrapper.class);
+        BatchUtil bat=new BatchUtil();
+        bat.setObject(dataWrapper.objectName);
+        bat.setcondition(dataWrapper.condition);
+        bat.setBatchSize(dataWrapper.batchSize);
+        bat.runAtSystemLevel(dataWrapper.systemLevel);
+        bat.setAllOrNone(!dataWrapper.partialDelete);
+        bat.setWithSharing(!dataWrapper.deleteUnshared);
+        if(dataWrapper.recordLimit>0)
+            bat.setLimit(dataWrapper.recordLimit);
+        return bat;
     }
 }
