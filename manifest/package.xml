@@ -36,5 +36,9 @@
         <members>*</members>
         <name>CustomTab</name>
     </types>
+     <types>
+        <members>*</members>
+        <name>PermissionSet</name>
+    </types>
     <version>49.0</version>
 </Package>
