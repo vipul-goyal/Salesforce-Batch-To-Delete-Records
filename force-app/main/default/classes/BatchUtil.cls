@@ -1,14 +1,23 @@
 public class BatchUtil {
     public class BatchUtilException extends Exception {}
-    
+
+    // Defines the batch size,default is 200.
     private Integer batchSize=200;
+    // Defines the number of records that have to be deleted
     private Integer recordLimit;
+    //Defines the Object Name
    	private String objectName;
+    //Defines the Query condition
     private String condition;
+    //Defines if the batch has to run in system mode , default is true
     private Boolean systemLevel=true;
+    //Defines if the batch has to run in user mode , default is false
     private Boolean userLevel=false;
+    //Defines if only records accessible to user are shown
     private Boolean withSharing=true;
+    //Defines if all the records in System have to be considered
     private Boolean withoutSharing=false;
+    //Defines whether the process has to be rollbacked on any failure or not
     private Boolean allOrNone=false;
     
     public void setBatchSize(Integer batchSize)
